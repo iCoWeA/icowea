@@ -1,0 +1,111 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+/*  Global
+    ========================================================================== */
+
+// Font imports
+@font-face {
+    /* font-family: ""; */
+    /* src: url("") format(""); */
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    /* font-family: ""; */
+    /* src: url("") format(""); */
+    font-weight: 700;
+    font-style: normal;
+    font-display: block;
+}
+
+* {
+    @include set-font-size;
+    font-family: $global-font-family;
+    -webkit-text-size-adjust: 100%;
+}
+
+html {
+    @include set-font-size; //shadow normalize
+}
+
+/*  Headings
+    ========================================================================== */
+
+h1 {
+    @include set-font-size(map-get($font-heading-ratios, 1));
+}
+
+h2 {
+    @include set-font-size(map-get($font-heading-ratios, 2));
+}
+
+h3 {
+    @include set-font-size(map-get($font-heading-ratios, 3));
+}
+
+h4 {
+    @include set-font-size(map-get($font-heading-ratios, 4));
+}
+
+h5 {
+    @include set-font-size(map-get($font-heading-ratios, 5));
+}
+
+h6 {
+    @include set-font-size(map-get($font-heading-ratios, 6));
+}
+
+/*  Grouping content
+    ========================================================================== */
+
+pre {
+    @include set-font-size; //shadow normalize
+    font-family: $font-family-mono; //shadow normalize
+}
+
+/*  Text-level semantics
+    ========================================================================== */
+
+b,
+strong {
+    font-weight: bold; //shadow normalize
+}
+
+code,
+kbd,
+samp {
+    @include set-font-size; //shadow normalize
+    font-family: $font-family-mono; //shadow normalize
+}
+
+small {
+    @include set-font-size(map-get($font-ratios, 6)); //shadow normalize
+}
+
+sup,
+sub {
+    font-size: map-get($font-ratios, 5); //shadow normalize
+}
+
+sub {
+    bottom: -0.25rem; //shadow normalize
+}
+
+sup {
+    top: -0.5rem; //shadow normalize
+}
+
+/*  Forms
+    ========================================================================== */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    @include set-font-size; //shadow normalize
+    font-family: $global-font-family; //shadow normalize
+}

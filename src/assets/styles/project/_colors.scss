@@ -1,0 +1,45 @@
+/*  Global
+    ========================================================================== */
+
+// Grays
+$grays: (
+        white : #fff,
+        100 : #e4e6e7,
+        200 : #c8ccd0,
+        300 : #adb3b8,
+        400 : #9299a0,
+        500 : #778088,
+        600 : #3b4044,
+        700 : #3b4044,
+        800 : #2f3337,
+        900 : #181a1b,
+        black : #000
+);
+
+// Colors schemes
+$colors: (
+        primary : #2C7CF5,
+        secondary : #0F4CA8,
+        info : #CFE2FF,
+        muted : map-get($grays, 200),
+        success : #7AFC46,
+        warning : #FFA717,
+        danger : #fc6b46,
+        white : map-get($grays, white),
+        black : map-get($grays, 900),
+        transparent : transparent
+);
+
+// Hover colors schemes
+$colors-hover: (
+        primary : #2C7CF5,
+        secondary : #0F4CA8,
+        info : #CFE2FF,
+        muted : map-get($grays, 200),
+        success : #7AFC46,
+        warning : #FFA717,
+        danger : #fc6b46,
+        white : map-get($grays, white),
+        black : map-get($grays, 900),
+        transparent : transparent
+);

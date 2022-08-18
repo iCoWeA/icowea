@@ -1,0 +1,81 @@
+@use 'variables' as *;
+
+/*  Typography
+    ========================================================================== */
+
+/**
+ * Set the font size and the line height
+ *
+ * @param   $size   the size of font, default value '$global-font-size'
+ */
+@mixin set-font-size($size: $global-font-size) {
+    font-size: $size;
+    line-height: $size + $global-leading;
+}
+
+/*  Flexbox
+    ========================================================================== */
+
+/**
+ * Abstract align for parent flexbox container
+ *
+ * @param   $direction    the direction of elements
+ * @param   $wrap         the wrap of container
+ * @param   $align        the align of content
+ * @param   $justify      the justify of items
+ * @param   $gap          the gap between items
+ */
+@mixin _flexbox-align($direction, $wrap, $align, $justify, $gap) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: $direction $wrap;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+/**
+ * Row align for parent flexbox container
+ *
+ * @param   $wrap         the wrap of container, default value 'nowrap'
+ * @param   $align        the align of content, default value 'center'
+ * @param   $justify      the justify of items, default value 'space-around'
+ * @param   $gap          the gap between items, default value '$global-gap'
+ */
+@mixin flexbox-align-row($wrap: nowrap, $align: center, $justify: space-around, $gap: $global-gap) {
+    @include _flexbox-align($direction: row, $wrap: $wrap, $align: $align, $justify: $justify, $gap: $gap);
+}
+
+/**
+ * Column align for parent flexbox container
+ *
+ * @param   $wrap         the wrap of container, default value 'nowrap'
+ * @param   $align        the align of content, default value 'stretch'
+ * @param   $justify      the justify of items, default value 'center'
+ * @param   $gap          the gap between items, default value '$global-gap'
+ */
+@mixin flexbox-align-col($wrap: nowrap, $align: stretch, $justify: center, $gap: $global-gap) {
+    @include _flexbox-align($direction: column, $wrap: $wrap, $align: $align, $justify: $justify, $gap: $gap);
+}
+
+/*  Grid
+    ========================================================================== */
+
+/**
+ * Set align for parent grid container
+ *
+ * @param   $align-content      the align of content, default value 'center'
+ * @param   $justify-content    the justify of content, default value 'center'
+ * @param   $align-items        the align of items, default value 'stretch'
+ * @param   $justify-items      the justify of items, default value 'stretch'
+ * @param   $gap                the gap between items, default value '$global-gap'
+ */
+@mixin grid-align($align-content: center, $justify-content: center, $align-items: stretch, $justify-items: stretch, $gap: $global-gap) {
+    display: grid;
+    place-content: $align-content $justify-content;
+    place-items: $align-items $justify-items;
+    grid-gap: $gap;
+}
