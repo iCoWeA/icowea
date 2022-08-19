@@ -1,0 +1,6 @@
+@use '../../assets/styles/project/_project' as project;
+
+.mobile-navbar-list {
+    @include project.flexbox-align-col($justify: space-evenly);
+    grid-area: body;
+}

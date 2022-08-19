@@ -43,7 +43,7 @@ $col-layout-container-columns-lg: 12;
 
 // Font stacks
 $font-family-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-$font-family-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-serif: Georgia, "Times New Roman", Times, serif;
 $font-family-mono: Menlo, Monaco, "Courier New", monospace;
 $global-font-family: $font-family-sans;
@@ -72,7 +72,8 @@ $font-ratios: (
 /*  Paths
     ========================================================================== */
 
-$img-path: "/src/Assets/Images/";
+$img-path: '/src/assets/images/';
+$icon-path: '/src/assets/icons/';
 
 /*  Z-index
     ========================================================================== */
@@ -82,10 +83,11 @@ $z-index: (
         dropdown : 1000,
         sticky : 1020,
         fixed : 1030,
-        modal-backdrop : 1040,
-        modal : 1050,
-        popover : 1060,
-        tooltip : 1070,
+        header: 1040,
+        modal-backdrop : 1050,
+        modal : 1060,
+        popover : 1070,
+        tooltip : 1080,
 );
 
 /*  Spacing
@@ -115,10 +117,33 @@ $backdrop-alpha: 0.5;
 
 $button-hover-alpha: 0.5;
 
+/*  Header
+    ========================================================================== */
+
+$header-width: 100vw;
+$header-height: 5rem;
+$header-top: 0;
+$header-left: 0;
+
 /*  MobileNavbar
     ========================================================================== */
 
-$mobile-navbar-width: 18rem;
-$mobile-navbar-height: 100vh;
 $mobile-navbar-top: 0;
-$mobile-navbar-left: 0;
+$mobile-navbar-right: 0;
+$mobile-navbar-width: 100vw;
+$mobile-navbar-height: 100vh;
+$mobile-navbar-header-height: $header-height;
+
+$mobile-navbar-hr-width: 75vw;
+$mobile-navbar-hr-height: 2px;
+
+$mobile-navbar-item-height: 5rem;
+$mobile-navbar-item-before-top: 0;
+$mobile-navbar-item-before-left: 0;
+$mobile-navbar-item-before-width: 75vw;
+$mobile-navbar-item-before-height: $mobile-navbar-item-height;
+$mobile-navbar-item-before-border-radius: 50px;
+
+$mobile-navbar-socials-width: $mobile-navbar-item-before-width;
+$mobile-navbar-socials-height: $header-height;
+$mobile-navbar-socials-icon-size: 1rem;

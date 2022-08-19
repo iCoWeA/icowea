@@ -1,0 +1,133 @@
+/*  Global
+    ========================================================================== */
+/*  Breakpoints
+    ========================================================================== */
+/*  Grid
+    ========================================================================== */
+/*  Typography
+    ========================================================================== */
+/*  Paths
+    ========================================================================== */
+/*  Z-index
+    ========================================================================== */
+/*  Spacing
+    ========================================================================== */
+/*  Backdrop
+    ========================================================================== */
+/*  Button
+    ========================================================================== */
+/*  Header
+    ========================================================================== */
+/*  MobileNavbar
+    ========================================================================== */
+/*  Typography
+    ========================================================================== */
+/**
+ * Set the font size and the line height
+ *
+ * @param   $size   the size of font, default value '$global-font-size'
+ */
+/*  Flexbox
+    ========================================================================== */
+/**
+ * Abstract align for parent flexbox container
+ *
+ * @param   $direction    the direction of elements
+ * @param   $wrap         the wrap of container
+ * @param   $align        the align of content
+ * @param   $justify      the justify of items
+ * @param   $gap          the gap between items
+ */
+/**
+ * Row align for parent flexbox container
+ *
+ * @param   $wrap         the wrap of container, default value 'nowrap'
+ * @param   $align        the align of content, default value 'center'
+ * @param   $justify      the justify of items, default value 'space-around'
+ * @param   $gap          the gap between items, default value '$global-gap'
+ */
+/**
+ * Column align for parent flexbox container
+ *
+ * @param   $wrap         the wrap of container, default value 'nowrap'
+ * @param   $align        the align of content, default value 'stretch'
+ * @param   $justify      the justify of items, default value 'center'
+ * @param   $gap          the gap between items, default value '$global-gap'
+ */
+/*  Grid
+    ========================================================================== */
+/**
+ * Set align for parent grid container
+ *
+ * @param   $align-content      the align of content, default value 'center'
+ * @param   $justify-content    the justify of content, default value 'center'
+ * @param   $align-items        the align of items, default value 'stretch'
+ * @param   $justify-items      the justify of items, default value 'stretch'
+ * @param   $gap                the gap between items, default value '$global-gap'
+ */
+/*  Global
+    ========================================================================== */
+/**
+ * Global container
+ *
+ * Use to the body or the page container
+ *
+ * @param   $theme   the type of theme, default value 'main'
+ */
+/*  Column layout
+    ========================================================================== */
+/**
+ * Abstract of a column layout container
+ *
+ * @param   $align-items        the align of items
+ * @param   $justify-items      the justify of items
+ */
+/**
+ * Column layout container
+ *
+ * Use to the layout container (header, navbar, main, etc.)
+ *
+ * @param   $area               the area in global container (in layout)
+ * @param   $align-items        the align of items, default value 'stretch'
+ * @param   $justify-items      the justify of items, default value 'stretch'
+ */
+/**
+ * Full bleed wrapper
+ *
+ * Use as a wrapper to create the full-bleed element
+ *
+ * @param   $align-items        the align of items, default value 'stretch'
+ * @param   $justify-items      the justify of items, default value 'stretch'
+ */
+/*  Global
+    ========================================================================== */
+.mobile-navbar {
+  display: grid;
+  place-content: stretch stretch;
+  place-items: stretch stretch;
+  grid-gap: 0;
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1030;
+  width: 100vw;
+  height: 100vh;
+  grid-template-rows: 5rem 1fr 2px 5rem;
+  grid-template-areas: "header" "body" "hr" "footer";
+  background: #2C7CF5;
+}
+.mobile-navbar.active {
+  display: grid !important;
+}
+
+.mobile-navbar__hr {
+  grid-area: hr;
+  margin: auto;
+  width: 75vw;
+  height: 2px;
+  border-radius: 16px;
+  background: #fff;
+}
+
+/*# sourceMappingURL=MobileNavbar.css.map */

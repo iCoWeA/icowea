@@ -1,0 +1,34 @@
+@use '../../assets/styles/project/_project' as project;
+
+.mobile-navbar-item {
+    @include project.flexbox-align-row;
+    position: relative;
+
+    height: project.$mobile-navbar-item-height;
+
+    &:hover .mobile-navbar-item__link,
+    &:active .mobile-navbar-item__link {
+        color: map-get(project.$colors, primary);
+    }
+
+    &:hover::after,
+    &:active::after {
+        content: "";
+        position: absolute;
+        top: project.$mobile-navbar-item-before-top;
+        left: project.$mobile-navbar-item-before-left;
+        z-index: -1;
+
+        width: project.$mobile-navbar-item-before-width;
+        height: project.$mobile-navbar-item-before-height;
+        border-radius: 0 project.$mobile-navbar-item-before-border-radius project.$mobile-navbar-item-before-border-radius 0;
+        background: map-get(project.$colors, white);
+    }
+}
+
+.mobile-navbar-item__link {
+    @include project.set-font-size(map-get(project.$font-heading-ratios, 1));
+
+    font-weight: bold;
+    color: map-get(project.$colors, white);
+}
